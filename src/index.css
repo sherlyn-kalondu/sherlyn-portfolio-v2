@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+/* CSS variables for light/dark themes and scoped light-mode overrides
+   Keep dark mode untouched (html.dark) — these rules only apply
+   when the page is NOT in dark mode. This fixes contrast issues
+   from accidental light/white text on light backgrounds. */
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+:root {
+  --paper: #F4F0E8; /* warm paper */
+  --offwhite: #FAF9F5;
+  --ink: #171717; /* near-black */
+  --accent: #E54B2F; /* burnt orange */
+  --olive: #68705A; /* muted olive */
+  --surface: #FFFFFF;
+  --border: #dedbd3;
+  --border-subtle: #e9e6de;
+  --status-progress-bg: #ffecea;
+  --status-complete-bg: #f2f4ea;
+
+  /* dark mode editorial */
+  --bg-dark: #0c0d0e; /* charcoal */
+  --text-dark: #FAF9F5; /* warm off-white */
+}
+
+html:not(.dark) {
+  color-scheme: light;
+  --bg: var(--paper);
+  --surface: var(--offwhite);
+  --text-primary: var(--ink);
+  --text-muted: #6b6b62; /* subtle warm gray */
+}
+
+html.dark {
+  color-scheme: dark;
+  --bg: var(--bg-dark);
+  --surface: #0f1112;
+  --text-primary: var(--text-dark);
+  --text-muted: #c7c7bf;
+  --offwhite: #222526;
+  --border: #424647;
+  --border-subtle: #303435;
+  --status-progress-bg: #48261f;
+  --status-complete-bg: #30392c;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: "Manrope", sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+html.dark body {
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+/* Improve selection visibility */
+::selection {
+  background: #2563eb;
+  color: white;
+}
+
+/* Scoped light-mode overrides for commonly used Tailwind slate utilities
+   These ensure headings, body text, and secondary text have accessible
+   contrast in light mode without touching dark mode styles. */
+html:not(.dark) .text-slate-950 { color: var(--text-primary) !important; }
+html:not(.dark) .text-slate-900 { color: var(--text-primary) !important; }
+html:not(.dark) .text-slate-800 { color: var(--text-primary) !important; }
+html:not(.dark) .text-slate-700 { color: var(--text-muted) !important; }
+html:not(.dark) .text-slate-600 { color: #5f5f57 !important; }
+html:not(.dark) .text-slate-500 { color: #7a7a70 !important; }
+
+/* Make sure muted/secondary small text uses the muted variable */
+html:not(.dark) .text-slate-300 { color: var(--text-muted) !important; }
+
+/* Map previously-used blue/violet accents to editorial accents */
+html:not(.dark) .text-blue-600 { color: var(--accent) !important; }
+html:not(.dark) .text-blue-400 { color: #933625 !important; }
+html:not(.dark) .bg-blue-50 { background-color: var(--offwhite) !important; }
+html:not(.dark) .bg-sky-50 { background-color: var(--offwhite) !important; }
+html:not(.dark) .bg-violet-50 { background-color: #f7f6f3 !important; }
+html:not(.dark) .text-violet-700 { color: var(--olive) !important; }
+
+/* Accent outline/focus */
+html:not(.dark) .focus-visible\:outline-blue-600 { outline-color: var(--accent) !important; }
+
+/* Surfaces */
+html:not(.dark) .bg-white { background-color: var(--surface) !important; }
+html:not(.dark) .bg-slate-100 { background-color: var(--offwhite) !important; }
+
+/* Buttons */
+.btn-primary { background: var(--accent); color: #fffaf5; border: 1px solid transparent; }
+.btn-primary:hover { filter: brightness(0.95); }
+.btn-secondary { background: transparent; color: var(--text-primary); border: 1px solid var(--border); }
+.btn-outline { background: transparent; color: var(--text-primary); border: 1px solid var(--border); }
+.btn-secondary:hover, .btn-outline:hover { background: var(--offwhite); }
+.btn-primary:focus-visible, .btn-secondary:focus-visible, .btn-outline:focus-visible, .project-card:focus-visible, .modal-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* Badge */
+.badge { border: 1px solid var(--border); background: var(--offwhite); color: var(--text-primary); }
+
+/* Thin editorial shadows / borders */
+.thin-card { border: 1px solid var(--border); box-shadow: none; }
+
+/* Scoped dark-mode overrides to ensure readable contrast with our editorial palette */
+html.dark .text-slate-100 { color: var(--text-primary) !important; }
+html.dark .text-white { color: var(--text-primary) !important; }
+html.dark .text-slate-300 { color: var(--text-muted) !important; }
+html.dark .text-slate-400 { color: var(--text-muted) !important; }
+html.dark .text-slate-200 { color: var(--text-primary) !important; }
+
+html.dark .bg-slate-900 { background: var(--surface) !important; }
+html.dark .bg-slate-800 { background: #0b0c0d !important; }
+html.dark .bg-slate-950 { background: #060607 !important; }
+
+html.dark .border-slate-700 { border-color: var(--border) !important; }
+html.dark .border-slate-800 { border-color: var(--border-subtle) !important; }
+
+html.dark .hover\:bg-slate-800:hover { background: #0b0c0d !important; }
+
+/* Buttons and interactive elements in dark mode */
+html.dark .text-slate-300 { color: var(--text-muted) !important; }
+html.dark .text-slate-200 { color: var(--text-primary) !important; }
+
+
