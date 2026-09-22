@@ -11,7 +11,9 @@ import Skills from "./components/sections/Skills";
 function App() {
   return (
     <>
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
       <main>
         <Hero />
         <About />

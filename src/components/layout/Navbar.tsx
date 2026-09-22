@@ -6,7 +6,7 @@ function Navbar() {
   const links = ["Home", "About", "Skills", "Projects", "Contact"];
 
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-slate-200/80 dark:border-slate-800/80 dark:bg-slate-950/80" style={{ background: 'var(--paper)' }}>
+    <nav aria-label="Primary navigation" className="fixed top-0 z-50 w-full border-b border-slate-200/80 dark:border-slate-800/80 dark:bg-slate-950/80" style={{ background: 'var(--paper)' }}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <a href="#home" className="text-lg font-serif tracking-tight" style={{ color: "var(--text-primary)" }}>Sherlyn Kalondu</a>
         <div className="flex items-center gap-3 sm:gap-6">

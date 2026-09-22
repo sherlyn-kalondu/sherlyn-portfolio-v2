@@ -59,6 +59,8 @@ function Hero() {
               <img
                 src="/sherlyn-profile.jpg"
                 alt="Sherlyn Kalondu seated in an office"
+                fetchPriority="high"
+                decoding="async"
                 className="h-full w-full object-cover object-[48%_22%]"
               />
               {/* overlay removed for cleaner editorial composition */}

@@ -29,7 +29,7 @@ function CreativeToolkit() {
                 <div className={`grid gap-3 sm:gap-5 ${gridClass}`}>
                   {works.map((work) => (
                     <button key={work.image} type="button" onClick={() => setActiveWork(work)} className={`group relative overflow-hidden rounded-sm border text-left transition-[border-color,transform] duration-300 hover:-translate-y-0.5 hover:border-[var(--accent)] focus-visible:outline-2 focus-visible:outline-offset-4 ${frameClass}`} style={{ background: "var(--surface)", borderColor: "var(--border)" }} aria-label={`Open preview for ${work.title}, ${work.category}`}>
-                      <img src={work.image} alt={work.alt} className="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-[1.02] sm:p-5" />
+                      <img src={work.image} alt={work.alt} loading="lazy" decoding="async" className="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-[1.02] sm:p-5" />
                       <span className="absolute inset-x-0 bottom-0 p-3 sm:p-4" style={{ background: "rgb(12 13 14 / 0.82)" }}><span className="block text-sm font-bold text-white">{work.title}</span><span className="mt-0.5 block text-xs text-stone-200">{work.category}</span></span>
                     </button>
                   ))}

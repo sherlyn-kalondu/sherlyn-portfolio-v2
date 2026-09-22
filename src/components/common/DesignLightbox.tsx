@@ -31,7 +31,7 @@ function DesignLightbox({ work, onClose }: DesignLightboxProps) {
       <button type="button" aria-label="Close image preview" className="fixed inset-0 cursor-default" onClick={onClose} style={{ background: "rgb(0 0 0 / 0.68)" }} />
       <figure className="relative mx-auto w-full max-w-4xl rounded-md p-4 sm:p-6" style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
         <button ref={closeButtonRef} type="button" aria-label="Close image preview" onClick={onClose} className="modal-close absolute right-5 top-5 z-10 rounded p-2" style={{ background: "var(--surface)", color: "var(--text-primary)", border: "1px solid var(--border)" }}><X size={20} aria-hidden="true" /></button>
-        <div className="flex min-h-72 items-center justify-center overflow-hidden rounded-sm" style={{ background: "var(--offwhite)" }}><img src={work.image} alt={work.alt} className="max-h-[70vh] w-full object-contain" /></div>
+        <div className="flex min-h-72 items-center justify-center overflow-hidden rounded-sm" style={{ background: "var(--offwhite)" }}><img src={work.image} alt={work.alt} decoding="async" className="max-h-[70vh] w-full object-contain" /></div>
         <figcaption className="flex flex-col gap-1 pt-4 sm:flex-row sm:items-baseline sm:justify-between"><h2 id="design-lightbox-title" className="text-xl font-bold" style={{ color: "var(--text-primary)" }}>{work.title}</h2><p className="text-sm font-semibold" style={{ color: "var(--olive)" }}>{work.category}</p></figcaption>
       </figure>
     </div>
